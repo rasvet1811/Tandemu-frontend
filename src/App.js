@@ -4,7 +4,7 @@ import './components/Auth/Login.css';
 import Login from './components/Auth/Login';
 import Panel from './components/Panel/Panel';
 
-const API_BASE_URL = 'http://localhost:5000/api/auth';
+const API_BASE_URL = 'https://3jlcdw4g-5000.use2.devtunnels.ms/api/auth';
 
 const LoginComponent = ({ onLoginSuccess }) => {
   const [isSignUp, setIsSignUp] = useState(false);
