@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Auth/Login.css';
 
-const API_BASE_URL = 'http://localhost:5000/api/auth';
+const API_BASE_URL = 'https://3jlcdw4g-5000.use2.devtunnels.ms/api/auth';
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
