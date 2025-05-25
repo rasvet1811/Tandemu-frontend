@@ -1,0 +1,288 @@
+/* src/components/Panel/styles/Perfil.css */
+
+#perfil {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#fotoPerfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #7e57c2;
+    margin-bottom: 20px;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.perfil-header h2 {
+  color: #5e35b1;
+  margin-bottom: 5px;
+}
+
+.perfil-info {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.perfil-info p {
+    margin: 10px 0;
+    color: #455a64;
+}
+
+.perfil-info strong {
+    color: #5e35b1;
+}
+
+.perfil-section {
+    margin-bottom: 30px;
+}
+
+.perfil-section h3 {
+    color: #5e35b1;
+    border-bottom: 2px solid #b39ddb;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.cursos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.curso-item {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #7e57c2;
+}
+
+.curso-item h4 {
+    color: #5e35b1;
+    margin-top: 0;
+}
+
+.curso-desc {
+    color: #546e7a;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.curso-progreso {
+    color: #7e57c2;
+    font-weight: bold;
+}
+
+.pago-info {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subscripcion {
+    background: linear-gradient(135deg, #7e57c2 0%, #2196f3 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.subscripcion h3 {
+    margin-top: 0;
+    color: white;
+}
+
+.subscripcion ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.subscripcion li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.subscripcion li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+}
+
+.subscripcion-btn {
+    background: white;
+    color: #7e57c2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.subscripcion-btn:hover {
+    background: #e3f2fd;
+    transform: translateY(-2px);
+}
+
+.perfil-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 32px 24px;
+}
+
+.perfil-foto img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e0e0e0;
+}
+
+.perfil-info h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #5e35b1;
+}
+
+.perfil-info p {
+  margin: 4px 0 0 0;
+  color: #444;
+}
+
+.perfil-datos-box {
+  background: linear-gradient(90deg, #e3e0ff 0%, #e0e7ff 100%);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-bottom: 32px;
+  color: #333;
+  font-size: 1.05em;
+}
+
+.perfil-subtitulo {
+  text-align: center;
+  color: #5e35b1;
+  margin: 32px 0 16px 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.perfil-materias {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.perfil-materia-card {
+  background: #fafaff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 18px 20px;
+  min-width: 220px;
+  max-width: 240px;
+  text-align: center;
+}
+
+.perfil-materia-card h3 {
+  margin: 0 0 8px 0;
+  color: #5e35b1;
+}
+
+.perfil-progreso {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #5e35b1;
+}
+
+.perfil-barra {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.perfil-barra-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #7c4dff, #5e35b1);
+  border-radius: 4px;
+}
+
+.perfil-academico-box {
+  background: #f5f5fa;
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-bottom: 32px;
+  color: #222;
+  font-size: 1.08em;
+}
+
+.perfil-premium-box {
+  background: linear-gradient(90deg, #7c4dff 0%, #5e35b1 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.perfil-premium-box h3 {
+  margin-top: 0;
+}
+
+.perfil-premium-box ul {
+  text-align: left;
+  margin: 16px auto 24px auto;
+  max-width: 400px;
+}
+
+.perfil-premium-box button {
+  background: #fff;
+  color: #5e35b1;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.perfil-premium-box button:hover {
+  background: #ede7f6;
+}
+
+@media (max-width: 900px) {
+  .perfil-wrapper {
+    max-width: 98vw;
+    padding: 16px 4vw;
+  }
+  .perfil-materias {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
