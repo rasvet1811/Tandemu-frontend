@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import '../../tandemu-react/src/components/Auth/Login.css';
+import './components/Auth/Login.css';
 import Login from './components/Auth/Login';
 import Panel from './components/Panel/Panel';
 
