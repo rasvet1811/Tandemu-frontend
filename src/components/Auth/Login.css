@@ -9,13 +9,14 @@
     backdrop-filter: brightness(0.7);
     margin: 0;
     height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .login-wrapper, .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* No centrar aquí, solo el body */
   }
   
   .container {
@@ -25,10 +26,10 @@
                 0 10px 10px rgba(0,0,0,0.22);
     position: relative;
     overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-    margin: 5vh auto;
+    width: 1100px;
+    max-width: 1100%;
+    min-height: 600px;
+    margin: 23vh auto;
     display: flex;
   }
   
@@ -81,6 +82,7 @@
     margin: 8px 0;
     width: 100%;
     border-radius: 5px;
+    font-size: 1.2rem;
   }
   
   button {
@@ -88,7 +90,7 @@
     border: 1px solid #2196f3;
     background-color: #2196f3;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     padding: 12px 45px;
     margin-top: 10px;
@@ -143,6 +145,7 @@
     height: 100%;
     width: 50%;
     transition: transform 0.6s ease-in-out;
+    
   }
   
   .overlay-left {
@@ -163,6 +166,45 @@
     transform: translateX(20%);
   }
   
+  .form-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .overlay-panel .ghost {
+    background-color: #8111c2;
+    color: #ffffff;
+    border: 2px solid #1976d2;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+  }
+  
+  .overlay-panel .ghost:hover, .overlay-panel .ghost:focus {
+    background-color: #ffffff;
+    color: #7214a8e8;
+    border: 2px solid #1976d2;
+  }
+  
+  .overlay-panel h2 {
+    font-size: 2.0rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .overlay-panel h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  
+  .overlay-panel p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 22px;
+  }
+  
   /* Responsive */
   @media (max-width: 900px) {
     .container {
@@ -179,7 +221,7 @@
     .container {
       flex-direction: column;
       width: 100vw;
-      min-height: 100vh;
+      
       border-radius: 0;
       box-shadow: none;
     }
