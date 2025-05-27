@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Asesorias.css';
 
-const Asesorias = () => {
+const Asesorias = ({ setFechasOcupadas, fechasOcupadas, asesoriasPorFecha, setAsesoriasPorFecha }) => {
   const [showCalendarModal, setShowCalendarModal] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
   const [currentAsesor, setCurrentAsesor] = useState('');
@@ -17,18 +17,21 @@ const Asesorias = () => {
   const [modalidad, setModalidad] = useState('');
   const [intercambio, setIntercambio] = useState('');
   const [carrera, setCarrera] = useState('');
-  const [fechasOcupadas, setFechasOcupadas] = useState([]);
 
   const asesores = [
     {
       nombre: "Juan Pérez",
       materia: "Matemáticas Avanzadas",
-      descripcion: "Aprende los conceptos fundamentales de cálculo diferencial e integral, álgebra lineal y sus aplicaciones."
+      descripcion: "Aprende los conceptos fundamentales de cálculo diferencial e integral, álgebra lineal y sus aplicaciones.",
+      precio: 0,
+      modalidad: "virtual"
     },
     {
       nombre: "Ana García",
       materia: "Programación Web",
-      descripcion: "Domina los fundamentos de HTML, CSS, JavaScript y frameworks modernos para desarrollo web."
+      descripcion: "Domina los fundamentos de HTML, CSS, JavaScript y frameworks modernos para desarrollo web.",
+      precio: 20000,
+      modalidad: "presencial"
     }
   ];
 
@@ -84,6 +87,13 @@ const Asesorias = () => {
       ...prev,
       { fecha: fechaAsesoria, motivo: `Asesoría con ${currentAsesor} - ${currentCurso}` }
     ]);
+    setAsesoriasPorFecha(prev => ({
+      ...prev,
+      [fechaAsesoria]: [
+        ...(prev[fechaAsesoria] || []),
+        `Asesoría con ${currentAsesor} (${currentCurso}) ${horaAsesoria}`
+      ]
+    }));
   };
 
   const enviarMensaje = () => {
@@ -165,11 +175,27 @@ const Asesorias = () => {
           <div className="asesorias-lista">
             {asesoresFiltrados.map((asesor, index) => (
               <div key={index} className="course-card">
-                <h3 className="course-title">{asesor.materia}</h3>
-                <p className="course-description">{asesor.descripcion}</p>
-                <p className="course-creator">Asesor: <strong>{asesor.nombre}</strong></p>
-                <button onClick={() => mostrarCalendario(asesor.nombre, asesor.materia)}>Agendar Asesoría</button>
-                <button onClick={() => iniciarChat(asesor.nombre)}>Contactar</button>
+                <img src={asesor.imagen || 'https://randomuser.me/api/portraits/men/32.jpg'} alt="asesor" className="img-asesor" />
+                <div className="course-card-content">
+                  <div className="course-card-header">
+                    <div className="course-title">{asesor.materia}</div>
+                    <span className="chip">ASESORÍA</span>
+                  </div>
+                  <div className="course-description">{asesor.descripcion}</div>
+                  <div className="course-chips">
+                    <span className="chip">{asesor.nombre}</span>
+                    {asesor.modalidad && <span className="chip">{asesor.modalidad.charAt(0).toUpperCase() + asesor.modalidad.slice(1)}</span>}
+                    {typeof asesor.precio !== 'undefined' && (
+                      <span className="chip" style={{ color: '#a020f0', borderColor: '#a020f0', background: '#fff' }}>
+                        {asesor.precio === 0 ? 'Gratis' : `$${asesor.precio}`}
+                      </span>
+                    )}
+                  </div>
+                  <div className="course-card-actions">
+                    <button onClick={() => mostrarCalendario(asesor.nombre, asesor.materia)}>Agendar Asesoría</button>
+                    <button onClick={() => iniciarChat(asesor.nombre)}>Contactar</button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

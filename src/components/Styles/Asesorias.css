@@ -7,41 +7,94 @@
   }
   
   .course-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 24px rgba(94,53,177,0.18), 0 1.5px 8px rgba(25,118,210,0.10);
-    padding: 24px;
-    margin-bottom: 24px;
-    border-left: 6px solid #512da8;
-    border: 2px solid #b39ddb;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 24px rgba(182, 39, 218, 0.15);
+    padding: 32px 48px;
+    margin-bottom: 32px;
+    border: 1.5px solid #fff;
+    color: #222;
     transition: box-shadow 0.2s, border-color 0.2s;
+    position: relative;
+    width: 100%;
+    min-height: 140px;
   }
   
   .course-card:hover {
-    box-shadow: 0 10px 32px rgba(94,53,177,0.25), 0 2px 12px rgba(25,118,210,0.13);
+    box-shadow: 0 10px 32px rgba(252, 252, 252, 0.25), 0 2px 12px rgba(25,118,210,0.13);
     border-color: #512da8;
   }
   
+  .course-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: auto;
+  }
+  
   .course-title {
-    color: #5e35b1;
-    margin-top: 0;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #a020f0;
+    margin: 0;
+  }
+  
+  .chip {
+    display: inline-block;
+    background: #ffffff;
+    color: #a020f0;
+    border: 1.5px solid #a020f0;
+    border-radius: 16px;
+    padding: 4px 14px;
+    font-size: 0.95em;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 4px;
+  }
+  
+  .course-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: auto;
   }
   
   .course-description {
-    color: #455a64;
-    margin: 10px 0;
+    color: #222;
+    margin: 0;
   }
   
   .course-creator {
     font-style: italic;
-    color: #757575;
+    color: #000000;
     margin-top: 15px;
   }
   
+  .course-card-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 0;
+    align-items: center;
+  }
+  
   .course-card button {
-    margin-right: 10px;
-    margin-top: 10px;
+    background: #a020f0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px #a020f033;
+  }
+  .course-card button:hover {
+    background: #7e57c2;
   }
   
   .calendar-container {
@@ -189,7 +242,7 @@
   .asesorias-layout {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 15rem;
     justify-content: center;
     align-items: flex-start;
   }
@@ -208,8 +261,11 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    min-width: 320px;
-    max-width: 40%;
+    min-width: 500px;
+    max-width: 100%;
+    margin-top: 32px;
+     margin-left: 0;
+     margin-right: 0;
   }
   .calendario-asesorias {
     flex: 1;
@@ -270,4 +326,24 @@
     padding: 6px;
     border-radius: 4px;
     border: 1px solid #ddd;
+  }
+  
+  .img-asesor {
+    width: 110px;
+    height: 110px;
+    border-radius: 16px;
+    object-fit: cover;
+    background: #eee;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  
+  .course-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    max-width: 420px;
   }

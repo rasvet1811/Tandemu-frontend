@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CalendarioAsesorias from './CalendarioAsesorias';
 import '../Styles/CalendarioAcademico.css';
 
-const CalendarioAcademico = ({ fechasOcupadas }) => {
+const CalendarioAcademico = ({ fechasOcupadas, tareasPorFecha, asesoriasPorFecha }) => {
   const [fechaSeleccionada, setFechaSeleccionada] = useState('');
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -41,6 +41,8 @@ const CalendarioAcademico = ({ fechasOcupadas }) => {
               fechasOcupadas={fechasOcupadas}
               fechaSeleccionada={fechaSeleccionada}
               setFechaSeleccionada={setFechaSeleccionada}
+              tareasPorFecha={tareasPorFecha}
+              asesoriasPorFecha={asesoriasPorFecha}
             />
           </div>
         </section>

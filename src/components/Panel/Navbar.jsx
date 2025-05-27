@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBook, FaChalkboardTeacher, FaCalendarAlt } from 'react-icons/fa';
+import { FaBook, FaChalkboardTeacher, FaCalendarAlt, FaHome, FaUser, FaSignOutAlt, FaBell, FaCommentDots, FaChevronDown } from 'react-icons/fa';
 
 const Navbar = ({ activeSection, onSectionChange, onLogout }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -15,26 +15,18 @@ const Navbar = ({ activeSection, onSectionChange, onLogout }) => {
           onClick={e => { e.preventDefault(); onSectionChange('inicio'); }}
           className={activeSection === 'inicio' ? 'active' : ''}
         >
-          Inicio
+          <FaHome style={{ marginRight: 6 }} /> Inicio
         </a>
-        {/* Agrupación académica */}
-        <div
-          className="navbar-dropdown"
-          onMouseEnter={() => setOpenDropdown(true)}
-          onMouseLeave={() => setOpenDropdown(false)}
-        >
-          <a href="#" className="agrupacion-btn">
-            Académico ▼
+        <div className="navbar-dropdown">
+          <a
+            href="#"
+            className={`agrupacion-btn${activeSection === 'materias' || activeSection === 'asesorias' || activeSection === 'calendario' ? ' active-dropdown' : ''}`}
+            onClick={e => { e.preventDefault(); setOpenDropdown(v => !v); }}
+          >
+            Gestión Académica <FaChevronDown style={{ marginLeft: 4, fontSize: 12 }} />
           </a>
           {openDropdown && (
             <div className="dropdown-menu">
-              <a
-                href="#"
-                onClick={e => { e.preventDefault(); onSectionChange('materias'); setOpenDropdown(false); }}
-                className={activeSection === 'materias' ? 'active' : ''}
-              >
-                <FaBook style={{ marginRight: 6 }} /> Materias
-              </a>
               <a
                 href="#"
                 onClick={e => { e.preventDefault(); onSectionChange('asesorias'); setOpenDropdown(false); }}
@@ -44,10 +36,17 @@ const Navbar = ({ activeSection, onSectionChange, onLogout }) => {
               </a>
               <a
                 href="#"
+                onClick={e => { e.preventDefault(); onSectionChange('materias'); setOpenDropdown(false); }}
+                className={activeSection === 'materias' ? 'active' : ''}
+              >
+                <FaBook style={{ marginRight: 6 }} /> Materias
+              </a>
+              <a
+                href="#"
                 onClick={e => { e.preventDefault(); onSectionChange('calendario'); setOpenDropdown(false); }}
                 className={activeSection === 'calendario' ? 'active' : ''}
               >
-                <FaCalendarAlt style={{ marginRight: 6 }} /> Calendario Académico
+                <FaCalendarAlt style={{ marginRight: 6 }} /> Calendario
               </a>
             </div>
           )}
@@ -59,15 +58,19 @@ const Navbar = ({ activeSection, onSectionChange, onLogout }) => {
           onClick={e => { e.preventDefault(); onSectionChange('perfil'); }}
           className={activeSection === 'perfil' ? 'active' : ''}
         >
-          Perfil
+          <FaUser style={{ marginRight: 6 }} /> Perfil
         </a>
         <a
           href="#"
           onClick={e => { e.preventDefault(); onLogout(); }}
           className="salir"
         >
-          Salir
+          <FaSignOutAlt style={{ marginRight: 6 }} /> Salir
         </a>
+        <div className="navbar-icons">
+          <FaBell className="navbar-icon" />
+          <FaCommentDots className="navbar-icon" />
+        </div>
       </div>
     </nav>
   );

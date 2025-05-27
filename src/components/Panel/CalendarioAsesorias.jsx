@@ -7,7 +7,9 @@ const CalendarioAsesorias = ({
   cambiarMes,
   fechasOcupadas,
   fechaSeleccionada,
-  setFechaSeleccionada
+  setFechaSeleccionada,
+  tareasPorFecha,
+  asesoriasPorFecha
 }) => {
   const [modalInfo, setModalInfo] = useState(null); // Para mostrar info de asesoría
   const meses = [
@@ -57,7 +59,21 @@ const CalendarioAsesorias = ({
               }}
               style={{ cursor: ocupada ? 'pointer' : 'pointer' }}
             >
-              {day}
+              <div>{day}</div>
+              {tareasPorFecha && tareasPorFecha[fecha] && (
+                <ul style={{ margin: 0, padding: 0, listStyle: 'none', fontSize: '0.85em', color: '#5e35b1' }}>
+                  {tareasPorFecha[fecha].map((tarea, idx) => (
+                    <li key={idx} style={{ marginTop: 2, whiteSpace: 'pre-line' }}>📌 {tarea}</li>
+                  ))}
+                </ul>
+              )}
+              {asesoriasPorFecha && asesoriasPorFecha[fecha] && (
+                <ul style={{ margin: 0, padding: 0, listStyle: 'none', fontSize: '0.85em', color: '#a020f0' }}>
+                  {asesoriasPorFecha[fecha].map((asesoria, idx) => (
+                    <li key={idx} style={{ marginTop: 2, whiteSpace: 'pre-line' }}>🎓 {asesoria}</li>
+                  ))}
+                </ul>
+              )}
             </td>
           );
           day++;
