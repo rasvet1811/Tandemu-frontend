@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../Styles/Asesorias.css';
-import CalendarioAsesorias from './CalendarioAsesorias';
 
 const Asesorias = () => {
   const [showCalendarModal, setShowCalendarModal] = useState(false);
@@ -13,18 +12,12 @@ const Asesorias = () => {
   const [chatMessages, setChatMessages] = useState([]);
   const [filtroNombre, setFiltroNombre] = useState('');
   const [filtroMateria, setFiltroMateria] = useState('');
-  const [fechaSeleccionada, setFechaSeleccionada] = useState('');
-  const [fechasOcupadas, setFechasOcupadas] = useState([
-    // Ejemplo de fechas ocupadas
-    "2025-05-12", "2025-05-15", "2025-05-20"
-  ]);
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [precioMin, setPrecioMin] = useState('');
   const [precioMax, setPrecioMax] = useState('');
   const [modalidad, setModalidad] = useState('');
   const [intercambio, setIntercambio] = useState('');
   const [carrera, setCarrera] = useState('');
+  const [fechasOcupadas, setFechasOcupadas] = useState([]);
 
   const asesores = [
     {
@@ -59,13 +52,11 @@ const Asesorias = () => {
   const mostrarCalendario = (asesor, curso) => {
     setCurrentAsesor(asesor);
     setCurrentCurso(curso);
-    setFechaAsesoria(fechaSeleccionada);
     setShowCalendarModal(true);
   };
 
   const onFechaInputChange = (e) => {
     setFechaAsesoria(e.target.value);
-    setFechaSeleccionada(e.target.value);
   };
 
   const iniciarChat = (asesor) => {
@@ -85,16 +76,14 @@ const Asesorias = () => {
       alert('Por favor selecciona una fecha');
       return;
     }
-    if (fechasOcupadas.includes(fechaAsesoria)) {
-      alert('La fecha seleccionada ya está ocupada. Por favor elige otra.');
-      return;
-    }
 
     alert(`Asesoría agendada correctamente:\n\nAsesor: ${currentAsesor}\nCurso: ${currentCurso}\nFecha: ${fechaAsesoria}\nHora: ${horaAsesoria}`);
-    setFechasOcupadas([...fechasOcupadas, fechaAsesoria]);
     setShowCalendarModal(false);
-    setFechaSeleccionada('');
     setFechaAsesoria('');
+    setFechasOcupadas(prev => [
+      ...prev,
+      { fecha: fechaAsesoria, motivo: `Asesoría con ${currentAsesor} - ${currentCurso}` }
+    ]);
   };
 
   const enviarMensaje = () => {
@@ -124,23 +113,8 @@ const Asesorias = () => {
     }
   };
 
-  const cambiarMes = (delta) => {
-    let newMonth = currentMonth + delta;
-    let newYear = currentYear;
-    if (newMonth < 0) {
-      newMonth = 11;
-      newYear--;
-    } else if (newMonth > 11) {
-      newMonth = 0;
-      newYear++;
-    }
-    setCurrentMonth(newMonth);
-    setCurrentYear(newYear);
-  };
-
   const cerrarModalCalendario = () => {
     setShowCalendarModal(false);
-    setFechaSeleccionada('');
     setFechaAsesoria('');
   };
 
@@ -201,14 +175,7 @@ const Asesorias = () => {
           </div>
           {/* Calendario a la derecha */}
           <div>
-            <CalendarioAsesorias
-              currentMonth={currentMonth}
-              currentYear={currentYear}
-              cambiarMes={cambiarMes}
-              fechasOcupadas={fechasOcupadas}
-              fechaSeleccionada={fechaSeleccionada}
-              setFechaSeleccionada={setFechaSeleccionada}
-            />
+            {/* Calendario a la derecha */}
           </div>
 
           {/* Modal para calendario */}

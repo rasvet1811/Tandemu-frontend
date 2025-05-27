@@ -15,10 +15,6 @@
     justify-content: center;
   }
   
-  .login-wrapper, .container {
-    /* No centrar aquí, solo el body */
-  }
-  
   .container {
     background-color: #fff;
     border-radius: 15px;

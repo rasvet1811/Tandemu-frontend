@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 import Navbar from './Navbar';
 import Inicio from './Inicio';
 import Asesorias from './Asesorias';
 import Materias from './Materias';
 import PQR from './PQR';
 import Perfil from './Perfil';
+import CalendarioAcademico from './CalendarioAcademico';
 import '../Styles/Panel.css';
 
 const Panel = ({ user }) => {
   const [activeSection, setActiveSection] = useState('inicio');
   const navigate = useNavigate();
+  const [fechasOcupadas, setFechasOcupadas] = useState([
+    // { fecha: "2025-05-12", motivo: "Asesoría con Juan Pérez - Matemáticas" }
+  ]);
 
   const handleLogout = () => {
     // Limpiar datos de sesión
@@ -23,15 +26,15 @@ const Panel = ({ user }) => {
 
   const sections = {
     inicio: <Inicio onSectionChange={setActiveSection} />,
-    asesorias: <Asesorias />,
+    asesorias: <Asesorias setFechasOcupadas={setFechasOcupadas} fechasOcupadas={fechasOcupadas} />,
     materias: <Materias />,
+    calendario: <CalendarioAcademico fechasOcupadas={fechasOcupadas} />,
     pqr: <PQR />,
     perfil: <Perfil user={user} />
   };
 
   return (
     <div className="panel-container">
-      <Header />
       <Navbar 
         activeSection={activeSection} 
         onSectionChange={setActiveSection} 

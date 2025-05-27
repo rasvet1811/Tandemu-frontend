@@ -1,95 +1,269 @@
 /* src/components/Panel/styles/Panel.css */
 
 .panel-container {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    background-color: #f0f2f5;
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: #518eff;
-    color: white;
-    padding: 1px 0 1px 0;
-    text-align: center;
-    font-family: 'Dancing Script', cursive, Arial, sans-serif;
-  }
-  
-  nav {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-    padding: 5px 10px;
-    border-radius: 4px;
-  }
-  
-  nav a:hover {
-    color: #007BFF;
-  }
-  
-  nav a.active {
-    color: #007BFF;
-    background-color: #e3f2fd;
-  }
-  
-  nav a.salir {
-    color: red;
-  }
-  
-  nav a.salir:hover {
-    color: darkred;
-  }
-  
-  main {
-    padding: 30px;
-    text-align: center;
-  }
-  
-  section {
-    display: none;
-    margin-top: 20px;
-  }
-  
-  section.active {
-    display: block;
-  }
-  
-  button {
-    background: #7e57c2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  button:hover {
-    background: #5e35b1;
-  }
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
 
-  .panel-container h1, .panel-container h2, .panel-container h3 {
-    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-    font-weight: 600;
-  }
+/* Elimina o comenta esto si ya no usas header */
+/* header {
+  background-color: #518eff;
+  color: white;
+  padding: 1px 0 1px 0;
+  text-align: center;
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+} */
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+nav {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .tandemu-cursiva {
-    font-family: 'Dancing Script', cursive, Arial, sans-serif;
-    font-style: italic;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #fff;
-    text-transform: uppercase;
-  }
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+nav a.active {
+  color: #007BFF;
+  background-color: #e3f2fd;
+}
+
+nav a.salir {
+  color: red;
+}
+
+nav a.salir:hover {
+  color: darkred;
+}
+
+main {
+  padding: 0 30px 30px 30px;
+  text-align: center;
+}
+
+section {
+  display: none;
+  margin-top: 20px;
+}
+
+section.active {
+  display: block;
+}
+
+button {
+  background: #7e57c2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #5e35b1;
+}
+
+.panel-container h1, .panel-container h2, .panel-container h3 {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+.tandemu-cursiva {
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: #fff;
+  min-height: 56px;
+  box-shadow: 0 2px 8px #0001;
+  width: 100%;
+}
+
+.navbar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5e35b1;
+  margin-right: 18px;
+}
+
+.navbar a, .navbar .agrupacion-btn {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar a.active, .navbar .dropdown-menu a.active {
+  background: #e3e3ff;
+  color: #5e35b1;
+}
+
+.navbar .salir {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-links button {
+  background: none;
+  border: none;
+  color: #222;
+  font-size: 1rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+}
+
+.navbar-links button.active,
+.navbar-links button:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #222;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  padding: 7px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.modo-oscuro-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modo-oscuro-btn:hover {
+  background: #1565c0;
+}
+
+.navbar-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.agrupacion-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #333;
+  font-weight: bold;
+  background: none;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 16px #0002;
+  border-radius: 8px;
+  min-width: 180px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.dropdown-menu a {
+  color: #222;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu a.active,
+.dropdown-menu a:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+}

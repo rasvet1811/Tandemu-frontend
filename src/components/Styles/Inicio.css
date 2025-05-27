@@ -1,397 +1,397 @@
 /* src/components/Panel/styles/Inicio.css */
 
 #inicio {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
-  .publicaciones-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-  }
-  
-  .publicacion-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: transform 0.3s;
-  }
-  
-  .publicacion-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .publicacion-imagen {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .publicacion-contenido {
-    padding: 20px;
-  }
-  
-  .publicacion-titulo {
-    color: #5e35b1;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-  }
-  
-  .publicacion-descripcion {
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-  
-  .publicacion-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #757575;
-    font-size: 0.9em;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-  }
-  
-  .publicacion-autor {
-    display: flex;
-    align-items: center;
-  }
-  
-  .autor-avatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
-  }
-  
-  .publicacion-acciones {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .accion-btn {
-    background: none;
-    border: none;
-    color: #5e35b1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.9em;
-    padding: 5px;
-  }
-  
-  .accion-btn:hover {
-    color: #7e57c2;
-  }
-  
-  .nueva-publicacion {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    padding: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .nueva-publicacion h3 {
-    margin-top: 0;
-    color: #5e35b1;
-  }
-  
-  .nueva-publicacion textarea {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 10px;
-    resize: none;
-    min-height: 80px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .nueva-publicacion textarea:focus {
-    outline: none;
-    border-color: #5e35b1;
-  }
-  
-  .nueva-publicacion-botones {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nueva-publicacion-botones button {
-    background: #5e35b1;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .nueva-publicacion-botones button:hover {
-    background: #7e57c2;
-  }
-  
-  .acciones-adjuntar {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .acciones-adjuntar button {
-    background: transparent;
-    color: #5e35b1;
-    padding: 0;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.9em;
-  }
-  
-  .acciones-adjuntar button:hover {
-    color: #7e57c2;
-    background: transparent;
-  }
-  
-  .error-message {
-    color: #d32f2f;
-    background-color: #fce4ec;
-    padding: 8px 12px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    font-size: 0.9em;
-  }
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
 
-  .inicio-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.publicaciones-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
 
-  .menu-lateral {
-    position: sticky;
-    top: 90px; /* Ajusta según tu header */
-    min-width: 220px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #0001;
-    padding: 24px 0;
-    height: fit-content;
-    /* border: 2px solid #e0e0e0; */
-    margin-right: 0;
-  }
+.publicacion-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
 
-  .menu-titulo {
-    text-align: center;
-    font-size: 1.7em;
-    margin-bottom: 18px;
-    color: #1976d2;
-    font-family: 'Dancing Script', cursive, Arial, sans-serif;
-    font-style: italic;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+.publicacion-card:hover {
+  transform: translateY(-5px);
+}
 
-  .menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
+.publicacion-imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
 
-  .menu-lateral li {
-    padding: 12px 0;
-    font-size: 1.1em;
-    color: #222;
-    border-radius: 8px;
-    margin-bottom: 4px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-  }
+.publicacion-contenido {
+  padding: 20px;
+}
 
-  .menu-lateral li.active,
-  .menu-lateral li:hover {
-    background: #e3f2fd;
-    color: #1976d2;
-    font-weight: bold;
-  }
+.publicacion-titulo {
+  color: #5e35b1;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
 
-  .feed-main {
-    flex: 1;
-    max-width: 600px;
-  }
+.publicacion-descripcion {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
 
-  .crear-publicacion {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #0001;
-    padding: 20px;
-    margin-bottom: 24px;
-  }
+.publicacion-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #757575;
+  font-size: 0.9em;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
 
-  .feed-publicaciones {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
+.publicacion-autor {
+  display: flex;
+  align-items: center;
+}
 
-  .publicacion-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #0001;
-    padding: 18px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 2px solid #e0e0e0;
-  }
+.autor-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
 
-  .publicacion-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+.publicacion-acciones {
+  display: flex;
+  gap: 15px;
+}
 
-  .publicacion-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+.accion-btn {
+  background: none;
+  border: none;
+  color: #5e35b1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+  padding: 5px;
+}
 
-  .publicacion-nombre {
-    font-weight: bold;
-    color: #1976d2;
-  }
+.accion-btn:hover {
+  color: #7e57c2;
+}
 
-  .publicacion-fecha {
-    color: #888;
-    font-size: 0.9em;
-  }
+.nueva-publicacion {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 30px;
+}
 
-  .publicacion-texto {
-    margin: 8px 0;
-  }
+.nueva-publicacion h3 {
+  margin-top: 0;
+  color: #5e35b1;
+}
 
-  .publicacion-imagen {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 8px;
-  }
+.nueva-publicacion textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  resize: none;
+  min-height: 80px;
+  font-family: 'Arial', sans-serif;
+}
 
-  .publicacion-acciones {
-    display: flex;
-    gap: 16px;
-    margin-top: 8px;
-  }
+.nueva-publicacion textarea:focus {
+  outline: none;
+  border-color: #5e35b1;
+}
 
-  .publicacion-acciones button {
-    background: none;
-    border: none;
-    color: #1976d2;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1em;
-    padding: 0;
-  }
+.nueva-publicacion-botones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .background-universidad {
-    min-height: 100vh;
-    min-width: 100vw;
-    background: url('../../../public/imagen_iush.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-  }
+.nueva-publicacion-botones button {
+  background: #5e35b1;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-  .contenido-blanco {
-    width: 90vw;
-    max-width: 1300px;
-    background: #fff;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    margin: 32px 0 0 0;
-    min-height: 80vh;
-  }
+.nueva-publicacion-botones button:hover {
+  background: #7e57c2;
+}
 
-  .recomendadas-box {
-    margin-top: 32px;
-    padding: 16px 18px;
-    background: #fff;
-    border-radius: 10px;
-    border: 1.5px solid #e0e0e0;
-    box-shadow: 0 2px 8px #0001;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
+.acciones-adjuntar {
+  display: flex;
+  gap: 15px;
+}
 
-  .recomendadas-box h4 {
-    margin: 0 0 12px 0;
-    color: #1976d2;
-    font-size: 1.08em;
-  }
+.acciones-adjuntar button {
+  background: transparent;
+  color: #5e35b1;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9em;
+}
 
-  .recomendadas-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+.acciones-adjuntar button:hover {
+  color: #7e57c2;
+  background: transparent;
+}
 
-  .recomendada-card {
-    background: #fff;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px #0001;
-    padding: 8px 8px;
-    border: 1px solid #e0e0e0;
-  }
+.error-message {
+  color: #d32f2f;
+  background-color: #fce4ec;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
 
-  .recomendada-titulo {
-    font-weight: bold;
-    color: #5e35b1;
-    margin-bottom: 4px;
-  }
+.inicio-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .recomendada-desc {
-    color: #444;
-    font-size: 0.97em;
-  }
+.menu-lateral {
+  position: sticky;
+  top: 90px; /* Ajusta según tu header */
+  min-width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 24px 0;
+  height: fit-content;
+  /* border: 2px solid #e0e0e0; */
+  margin-right: 0;
+}
 
-  .perfil-menu-lateral {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0px;
-    gap: 12px;
-  }
+.menu-titulo {
+  text-align: center;
+  font-size: 1.7em;
+  margin-bottom: 18px;
+  color: #1976d2;
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-  .avatar-menu-lateral {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #1976d2;
-    margin-bottom: 0;
-  }
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 
-  .nombre-menu-lateral {
-    font-weight: bold;
-    color: #222;
-    font-size: 1.08em;
-    text-align: left;
-  }
+.menu-lateral li {
+  padding: 12px 0;
+  font-size: 1.1em;
+  color: #222;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu-lateral li.active,
+.menu-lateral li:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.feed-main {
+  flex: 1;
+  max-width: 600px;
+}
+
+.crear-publicacion {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.feed-publicaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.publicacion-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid #e0e0e0;
+}
+
+.publicacion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.publicacion-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.publicacion-nombre {
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.publicacion-fecha {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.publicacion-texto {
+  margin: 8px 0;
+}
+
+.publicacion-imagen {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.publicacion-acciones {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.publicacion-acciones button {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0;
+}
+
+.background-universidad {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url('../../../public/imagen_iush.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.contenido-blanco {
+  width: 90vw;
+  max-width: 1300px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  margin: 32px 0 0 0;
+  min-height: 80vh;
+}
+
+.recomendadas-box {
+  margin-top: 32px;
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1.5px solid #e0e0e0;
+  box-shadow: 0 2px 8px #0001;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.recomendadas-box h4 {
+  margin: 0 0 12px 0;
+  color: #1976d2;
+  font-size: 1.08em;
+}
+
+.recomendadas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recomendada-card {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px #0001;
+  padding: 8px 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.recomendada-titulo {
+  font-weight: bold;
+  color: #5e35b1;
+  margin-bottom: 4px;
+}
+
+.recomendada-desc {
+  color: #444;
+  font-size: 0.97em;
+}
+
+.perfil-menu-lateral {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  gap: 12px;
+}
+
+.avatar-menu-lateral {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1976d2;
+  margin-bottom: 0;
+}
+
+.nombre-menu-lateral {
+  font-weight: bold;
+  color: #222;
+  font-size: 1.08em;
+  text-align: left;
+}

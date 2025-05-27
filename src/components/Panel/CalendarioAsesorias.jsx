@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import './CalendarioAsesorias.css';  // <-- Elimina o comenta esta línea
 
 const CalendarioAsesorias = ({
@@ -9,10 +9,16 @@ const CalendarioAsesorias = ({
   fechaSeleccionada,
   setFechaSeleccionada
 }) => {
+  const [modalInfo, setModalInfo] = useState(null); // Para mostrar info de asesoría
   const meses = [
     "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
     "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
   ];
+
+  const getMotivoOcupada = (fecha) => {
+    const found = fechasOcupadas.find(f => f.fecha === fecha);
+    return found ? found.motivo : '';
+  };
 
   const generarCalendario = () => {
     const firstDay = new Date(currentYear, currentMonth, 1).getDay();
@@ -27,19 +33,29 @@ const CalendarioAsesorias = ({
           days.push(<td key={`empty-${i}-${j}`}></td>);
         } else {
           const fecha = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-          const ocupada = fechasOcupadas.includes(fecha);
+          const ocupada = Array.isArray(fechasOcupadas)
+            ? (fechasOcupadas[0] && typeof fechasOcupadas[0] === 'object'
+                ? fechasOcupadas.some(f => f.fecha === fecha)
+                : fechasOcupadas.includes(fecha))
+            : false;
           days.push(
             <td
               key={`day-${day}`}
               className={
                 ocupada
-                  ? 'fecha-ocupada'
+                  ? 'calendario-celda ocupada'
                   : fecha === fechaSeleccionada
-                  ? 'fecha-seleccionada'
-                  : 'fecha-libre'
+                  ? 'calendario-celda seleccionada'
+                  : 'calendario-celda'
               }
-              onClick={() => !ocupada && setFechaSeleccionada(fecha)}
-              style={{ cursor: ocupada ? 'not-allowed' : 'pointer' }}
+              onClick={() => {
+                if (ocupada) {
+                  setModalInfo({ fecha, motivo: getMotivoOcupada(fecha) });
+                } else {
+                  setFechaSeleccionada(fecha);
+                }
+              }}
+              style={{ cursor: ocupada ? 'pointer' : 'pointer' }}
             >
               {day}
             </td>
@@ -55,12 +71,12 @@ const CalendarioAsesorias = ({
 
   return (
     <div className="calendario-asesorias">
-      <div className="calendar-header">
+      <div className="calendario-header">
         <button onClick={() => cambiarMes(-1)}>❮</button>
         <h3>{meses[currentMonth]} {currentYear}</h3>
         <button onClick={() => cambiarMes(1)}>❯</button>
       </div>
-      <table className="calendar">
+      <table className="calendario-table">
         <thead>
           <tr>
             <th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th>
@@ -70,11 +86,21 @@ const CalendarioAsesorias = ({
           {generarCalendario()}
         </tbody>
       </table>
-      <div className="leyenda">
-        <span className="cuadro-libre"></span> Libre
-        <span className="cuadro-ocupado"></span> Ocupada
-        <span className="cuadro-seleccionada"></span> Seleccionada
+      <div className="calendario-leyenda">
+        <span className="libre"></span> Libre
+        <span className="ocupada"></span> Ocupada
+        <span className="seleccionada"></span> Seleccionada
       </div>
+      {modalInfo && (
+        <div className="calendario-modal-backdrop">
+          <div className="calendario-modal">
+            <h3>Fecha ocupada</h3>
+            <div className="fecha">{modalInfo.fecha}</div>
+            <div className="motivo">{modalInfo.motivo}</div>
+            <button onClick={() => setModalInfo(null)}>Cerrar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

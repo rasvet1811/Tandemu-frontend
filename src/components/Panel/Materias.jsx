@@ -91,62 +91,24 @@ const Materias = () => {
   return (
     <div className="background-universidad">
       <div className="contenido-blanco">
-        <div className="classroom-layout">
-          <aside className="sidebar">
-            <div className="sidebar-title">Tandemu</div>
-            <nav>
-              <ul>
-                <li
-                  className={vistaActiva === 'materias' ? 'active' : ''}
-                  onClick={() => setVistaActiva('materias')}
-                >
-                  Materias
-                </li>
-                <li
-                  className={vistaActiva === 'calendario' ? 'active' : ''}
-                  onClick={() => setVistaActiva('calendario')}
-                >
-                  Calendario
-                </li>
-                <li>Clases archivadas</li>
-                <li>Configuración</li>
-              </ul>
-            </nav>
-          </aside>
-          <main className="main-content">
-            {vistaActiva === 'materias' && (
-              <>
-                <h2>Mis Materias</h2>
-                <div className="materias-cards-grid">
-                  {materias.map(materia => (
-                    <div key={materia.id} className="materia-card-big">
-                      <div className="materia-card-header">
-                        <div className="materia-card-title">{materia.nombre}</div>
-                        <div className="materia-card-icon">{materia.icono}</div>
-                      </div>
-                      <div className="materia-card-desc">{materia.descripcion}</div>
-                      <div className="materia-card-actions">
-                        <button>Ver tus tareas</button>
-                        <button>Archivos</button>
-                      </div>
-                    </div>
-                  ))}
+        <main className="main-content">
+          <h2>Mis Materias</h2>
+          <div className="materias-cards-grid">
+            {materias.map(materia => (
+              <div key={materia.id} className="materia-card-big">
+                <div className="materia-card-header">
+                  <div className="materia-card-title">{materia.nombre}</div>
+                  <div className="materia-card-icon">{materia.icono}</div>
                 </div>
-              </>
-            )}
-
-            {vistaActiva === 'calendario' && (
-              <CalendarioTareas
-                fechasOcupadas={fechasTareas}
-                onProgramarTarea={handleProgramarTarea}
-                cambiarMes={cambiarMes}
-                currentMonth={currentMonth}
-                currentYear={currentYear}
-                tareasPorFecha={tareasPorFecha}
-              />
-            )}
-          </main>
-        </div>
+                <div className="materia-card-desc">{materia.descripcion}</div>
+                <div className="materia-card-actions">
+                  <button>Ver tus tareas</button>
+                  <button>Archivos</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </main>
       </div>
     </div>
   );

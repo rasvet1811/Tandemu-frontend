@@ -1,0 +1,140 @@
+.calendario-academico-layout {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.calendario-academico-layout h2 {
+  text-align: center;
+  color: #5e35b1;
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+}
+
+.calendario-asesorias {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4a6cf7;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.calendario-header button {
+  background: #7c4dff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.calendario-header button:hover {
+  background: #5e35b1;
+}
+
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f5f6fa;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.calendario-dia, .calendario-celda {
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1rem;
+}
+
+.calendario-dia {
+  font-weight: bold;
+  background: #e3e3e3;
+  color: #5e35b1;
+}
+
+.calendario-celda {
+  background: #e8f5e9;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border: 1px solid #f0f0f0;
+  min-height: 36px;
+  position: relative;
+}
+
+.calendario-celda.ocupada {
+  background: #ffbdbd;
+  color: #b71c1c;
+}
+
+.calendario-celda.seleccionada {
+  background: #bdbdff;
+  color: #283593;
+}
+
+.calendario-celda:hover {
+  filter: brightness(0.95);
+}
+
+.calendario-leyenda {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.calendario-leyenda span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calendario-leyenda .libre { background: #e8f5e9; width: 16px; height: 16px; border-radius: 4px; border: 1px solid #bdbdbd;}
+.calendario-leyenda .ocupada { background: #ffbdbd; width: 16px; height: 16px; border-radius: 4px; border: 1px solid #bdbdbd;}
+.calendario-leyenda .seleccionada { background: #bdbdff; width: 16px; height: 16px; border-radius: 4px; border: 1px solid #bdbdbd;}
+
+.calendario-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f5f6fa;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+.calendario-table th, .calendario-table td {
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1rem;
+  border: 1px solid #f0f0f0;
+}
+
+.calendario-academico-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 24px 18px 18px 18px;
+}
